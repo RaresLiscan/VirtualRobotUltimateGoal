@@ -263,6 +263,7 @@ public class VirtualRobotController {
     public VirtualBot getVirtualBotInstance(Class<?> c){
         try {
             Annotation a = c.getAnnotation(BotConfig.class);
+            System.out.println(((BotConfig) a).filename());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/virtual_robot/controller/robots/fxml/" + ((BotConfig) a).filename() + ".fxml"));
             Group group = (Group) loader.load();
             VirtualBot bot = (VirtualBot) loader.getController();

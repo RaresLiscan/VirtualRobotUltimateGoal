@@ -1,9 +1,11 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name = "Test Differential Swerve", group = "Test")
+@Disabled
 public class TestDiffSwerve extends OpMode {
 
     DiffSwerveDrive bot = new DiffSwerveDrive();

@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
@@ -14,6 +15,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.*;
  *
  */
 @TeleOp(name = "arm bot demo", group = "ArmBot")
+@Disabled
 public class ArmBotDemo extends LinearOpMode {
 
     public void runOpMode(){
