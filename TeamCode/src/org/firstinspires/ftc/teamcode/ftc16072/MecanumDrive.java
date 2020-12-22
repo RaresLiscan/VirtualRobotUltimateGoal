@@ -5,11 +5,11 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.matrices.GeneralMatrixF;
 import org.firstinspires.ftc.robotcore.external.matrices.MatrixF;
 
-class MecanumDrive {
-    private DcMotor frontLeft;
-    private DcMotor frontRight;
-    private DcMotor backRight;
-    private DcMotor backLeft;
+public class MecanumDrive {
+    public DcMotor frontLeft;
+    public DcMotor frontRight;
+    public DcMotor backRight;
+    public DcMotor backLeft;
 
     public static double GEAR_RATIO = 1.0; // for simulator - ours should be 0.5f;
     public static double WHEEL_RADIUS = 5.0;  // 5 cm
@@ -28,7 +28,7 @@ class MecanumDrive {
     private int backLeftOffset;
 
 
-    MecanumDrive() {
+    public MecanumDrive() {
         float[] data = {1.0f, 1.0f, 1.0f,
                 1.0f, -1.0f, -1.0f,
                 1.0f, -1.0f, 1.0f};
@@ -36,7 +36,7 @@ class MecanumDrive {
         conversion = conversion.inverted();
     }
 
-    void init(HardwareMap hwMap) {
+    public void init(HardwareMap hwMap) {
         frontLeft = hwMap.get(DcMotor.class, "front_left_motor");
         frontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         frontRight = hwMap.get(DcMotor.class, "front_right_motor");
@@ -63,7 +63,7 @@ class MecanumDrive {
         backRight.setPower(brSpeed / largest);
     }
 
-    void driveMecanum(double forward, double strafe, double rotate) {
+    public void driveMecanum(double forward, double strafe, double rotate) {
         double frontLeftSpeed = forward + strafe + rotate;
         double frontRightSpeed = forward - strafe - rotate;
         double backLeftSpeed = forward - strafe + rotate;
@@ -73,7 +73,7 @@ class MecanumDrive {
     }
 
     // Returns forward, strafe
-    double[] getDistanceCm() {
+    public double[] getDistanceCm() {
         double[] distances = {0.0, 0.0};
 
         encoderMatrix.put(0, 0, (float) ((frontLeft.getCurrentPosition() - frontLeftOffset) * CM_PER_TICK));
